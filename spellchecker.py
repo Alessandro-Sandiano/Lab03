@@ -10,6 +10,7 @@ class SpellChecker:
         words = list()
         for w in txt_in.split(): words.append(replace_chars(w.lower()))
 
+        # Contains
         t1 = time.time()
         rich_words = self._multi_dictionary.search_word(words, language)
         t2 = time.time()
@@ -18,6 +19,7 @@ class SpellChecker:
             if r_w.correct is False: s += r_w.word + "\n"
         s += "Time elapsed: " + str(t2 - t1) + "\n------------------------------\n"
 
+        # Linear search
         t1 = time.time()
         rich_words = self._multi_dictionary.search_word_linear(words, language)
         t2 = time.time()
@@ -26,6 +28,7 @@ class SpellChecker:
             if r_w.correct is False: s += r_w.word + "\n"
         s += "Time elapsed: " + str(t2 - t1) + "\n------------------------------\n"
 
+        # Dichotomic search
         t1 = time.time()
         rich_words = self._multi_dictionary.search_word_dichotomic(words, language)
         t2 = time.time()

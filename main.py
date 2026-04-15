@@ -15,21 +15,21 @@ while True:
         else: break
 
     if int(txtIn) == 1:
-        #sc.multi_dictionary.print_dic("italian")
+        # sc.multi_dictionary.print_dic("italian")
         print("Inserisci la tua frase in Italiano\n")
         txtIn = input()
         print(sc.handle_sentence(txtIn,"italian"), end="")
         continue
 
     if int(txtIn) == 2:
-        #sc.multi_dictionary.print_dic("english")
+        # sc.multi_dictionary.print_dic("english")
         print("Inserisci la tua frase in Inglese\n")
         txtIn = input()
         print(sc.handle_sentence(txtIn,"english"), end="")
         continue
 
     if int(txtIn) == 3:
-        #sc.multi_dictionary.print_dic("spanish")
+        # sc.multi_dictionary.print_dic("spanish")
         print("Inserisci la tua frase in Spagnolo\n")
         txtIn = input()
         print(sc.handle_sentence(txtIn,"spanish"), end="")

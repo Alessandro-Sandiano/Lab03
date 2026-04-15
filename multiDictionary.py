@@ -12,12 +12,10 @@ class MultiDictionary:
         self._spanish.load_dictionary("resources/Spanish.txt")
 
     def print_dic(self, language):
-        """
-        match language:
-            case "italian": self._italian.print_all()
-            case "english": self._english.print_all()
-            case "spanish": self._spanish.print_all()
-        """
+        # match language:
+        #     case "italian": self._italian.print_all()
+        #     case "english": self._english.print_all()
+        #     case "spanish": self._spanish.print_all()
         getattr(self, f"_{language}").print_all()
 
     def search_word(self, words, language):
@@ -47,13 +45,11 @@ class MultiDictionary:
             minimum = 0
             maximum = getattr(self, f"_{language}").words_list.__len__()
             half = int((maximum - minimum) / 2)
-            """
-            (maximum-minimum != 1) instead of (maximum-minimum > 1 or maximum == 1)
-            is enough if getattr(self, f"_{language}").words_list.__len__() > 1
-            because getattr(self, f"_{language}").words_list.__len__() == 1
-            is the only case in which maximum == 1 at the beginning and
-            maximum-minimum can be zero (i.e. if r_w.word < getattr(self, f"_{language}").words_list[half])
-            """
+            # (maximum-minimum != 1) instead of (maximum-minimum > 1 or maximum == 1)
+            # is enough if getattr(self, f"_{language}").words_list.__len__() > 1
+            # because getattr(self, f"_{language}").words_list.__len__() == 1
+            # is the only case in which maximum == 1 at the beginning and
+            # maximum-minimum can be zero (i.e. if r_w.word < getattr(self, f"_{language}").words_list[half])
             while maximum-minimum > 1 or maximum == 1:
                 if r_w.word == getattr(self, f"_{language}").words_list[half]:
                     r_w.correct = True
