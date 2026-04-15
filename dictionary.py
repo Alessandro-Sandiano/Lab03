@@ -1,14 +1,15 @@
 class Dictionary:
     def __init__(self):
-        pass
+        self._words_list = list()
 
-    def loadDictionary(self,path):
-        pass
+    def load_dictionary(self, path):
+        with open(path, "r", encoding="utf-8") as file:
+            for line in file:
+                self._words_list.append(line.strip())
 
-    def printAll(self):
-        pass
-
+    def print_all(self):
+        for w in self._words_list: print(w)
 
     @property
-    def dict(self):
-        return self._dict
+    def words_list(self):
+        return self._words_list
